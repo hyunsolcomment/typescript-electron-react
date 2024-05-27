@@ -1,6 +1,6 @@
 import { contextBridge, ipcRenderer } from "electron";
 
-contextBridge.exposeInMainWorld('api', {
+contextBridge.exposeInMainWorld('electron', {
     send(ev: string, args: any) {
         ipcRenderer.send(ev, args);
     },

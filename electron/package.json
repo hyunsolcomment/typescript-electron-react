@@ -15,7 +15,7 @@
     "scripts": {
         "start": "npm run watch",
         "watch": "nodemon -e ts --watch ./src --exec npm run electron:start",
-        "electron:start": "cls && tsc && electron ./public/main.js",
+        "electron:start": "wait-on http://localhost:3000 && cls && tsc && electron ./public/main.js",
         "electron:build-window": "electron-builder -w",
         "electron:build-mac": "electron-builder -m"
     },
